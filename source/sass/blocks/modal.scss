@@ -35,10 +35,10 @@
     display: flex;
     flex-shrink: 0;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     width: 100%;
     min-height: 100%;
-    padding: 60px 40px;
+    padding: 145px 40px;
 
     @include vp-767 {
       padding: 60px 16px;
@@ -59,10 +59,10 @@
   &__content {
     position: relative;
 
-    width: 600px;
+    width: 500px;
     padding: 40px;
-
-    background-color: $color-default-white;
+    margin-right: 10px;
+    background-color: $color-deep-sky-light;
 
     @include vp-767 {
       width: 100%;
@@ -116,4 +116,253 @@
 
     pointer-events: auto;
   }
+}
+
+.modal__box {
+  display: flex;
+  gap: 109px;
+  margin-top: 77px;
+
+  @media (max-width: 1023px) {
+    margin-top: 0;
+  }
+
+  & form {
+    margin-top: -77px;
+    width: 601px;
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    display: block;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    z-index: 2;
+    width: 510px;
+    height: 285px;
+    background-image: url("./../img/block/airplane.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+}
+
+.modal__title {
+  @include style-reset();
+
+  font-family: $ff-roboto;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  color: $color-default-white;
+  margin-bottom: 7px;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 2px;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 42px;
+  }
+}
+
+.modal__description {
+  @include style-reset();
+  line-height: $line-height;
+  font-family: $ff-ptmono;
+  color: $color-default-white;
+  margin-bottom: 35px;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 21px;
+    padding: 0;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 29px;
+  }
+}
+
+.modal__contact {
+  display: flex;
+  gap: 18px;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  @media (max-width: 1023px) {
+    padding: 0;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  & label {
+    width: 100%;
+  }
+
+  & input {
+    width: 100%;
+    font-family: $ff-ptmono;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $fz-default;
+    line-height: $line-height;
+    padding: 15px;
+    background: rgba(4, 20, 39, 0.15);
+    border: none;
+    border-radius: 3px;
+
+    &::placeholder {
+      color: $color-default-white;
+    }
+  }
+}
+
+.modal__textarea {
+  margin-bottom: 14px;
+
+  @media (max-width: 1023px) {
+    padding: 0;
+  }
+}
+
+.modal__textarea textarea {
+  font-family: $ff-ptmono;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fz-default;
+  line-height: $line-height;
+  padding: 23px 15px;
+  background: rgba(4, 20, 39, 0.15);
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+
+  @media (max-width: 1023px) {
+    padding: 29px 15px 17px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 22px 15px 45px;
+  }
+
+  &::placeholder {
+    color: $color-default-white;
+  }
+}
+
+.modal__bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+
+  @media (max-width: 1023px) {
+    padding: 0;
+    align-items: center;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.modal__bottom button {
+  font-weight: 700;
+  line-height: 19px;
+  max-width: 265px;
+  width: 100%;
+
+  align-items: center;
+  color: $color-default-white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  background: $color-black-perl;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 50px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 0 25px;
+    padding: 12px 25px;
+  }
+}
+
+.approv {
+  & label {
+    display: grid;
+    gap: 11px;
+    grid-template-columns: 15px 1fr;
+    align-self: center;
+  }
+}
+
+.approv__label {
+  color: $color-white-transparent;
+  font-family: $ff-ptmono;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+// ----------------------- CHECKBOX------------------
+.approv__icon {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid $color-default-white;
+  border-radius: 2px;
+  align-self: center;
+}
+
+input[type="checkbox"]:checked + .approv__icon::before {
+
+  content: "";
+  position: absolute;
+  display: block;
+  width: 7px;
+  top: 4px;
+  right: 4px;
+  height: 6px;
+  background-image: url("./../img/svg/toggle.svg");
+}
+
+// input[type="checkbox"]:focus + .approv__icon {
+//   outline: 2px solid black;
+// }
+
+.modal__bottom--centr {
+  align-items: center;
+
+  & button {
+    margin: 0 0 20px;
+    max-width: 100%;
+  }
+}
+
+.modal__close-btn svg {
+  fill: $color-alice-blue;
 }

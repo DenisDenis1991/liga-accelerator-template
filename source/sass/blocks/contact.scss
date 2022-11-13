@@ -1,0 +1,89 @@
+.contact {
+  color: $color-white-transparent;
+  position: relative;
+
+  &::after {
+    @media (max-width: 767px) {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100vw;
+      min-width: 320px;
+      bottom: -13px;
+      height: 1px;
+      background-color: rgba(248, 253, 255, 0.7);
+    }
+  }
+}
+
+.contact__address {
+  font-style: normal;
+  font-family: $ff-ptmono;
+  margin-bottom: 8px;
+  max-width: 345px;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 2px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.contact__box {
+  @media (max-width: 767px) {
+    padding: 0 25px;
+    &--mobile {
+      display: none;
+    }
+  }
+}
+
+.contact__heading {
+  @include style-reset();
+  font-family: $ff-roboto;
+  font-weight: 400;
+  color: $color-default-white;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 23px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+    padding: 29px 25px 11px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 15px;
+      height: 1px;
+      right: 25px;
+      top: 29px;
+      background-color: $color-alice-blue;
+    }
+  }
+}
+
+.contact__list {
+  @include list-reset();
+}
+
+.contact__item:not(:last-child) {
+  padding-bottom: 5px;
+}
+
+.contact__link {
+  line-height: 25px;
+  font-family: $ff-ptmono;
+  color: $color-white-transparent;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}

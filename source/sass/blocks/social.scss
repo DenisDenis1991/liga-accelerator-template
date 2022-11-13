@@ -1,0 +1,12 @@
+.social {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  column-gap: 16px;
+}
+
+.social__link {
+  display: inline-block;
+  font-size: 0;
+  padding: 5px;
+  line-height: 0;
+}

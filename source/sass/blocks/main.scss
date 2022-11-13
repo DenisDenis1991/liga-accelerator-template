@@ -1,0 +1,47 @@
+.main__advantages {
+  padding: 120px 0;
+
+  @media (max-width: 1023px) {
+    padding: 80px 0 78px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 50px 0;
+  }
+}
+
+.main__product {
+  padding: 70px 0 140px;
+
+  @media (max-width: 1023px) {
+    padding: 56px 0 75px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 50px 0 86px;
+  }
+}
+
+.main__about {
+  padding-bottom: 97px;
+
+  @media (max-width: 1023px) {
+    padding-bottom: 79px;
+  }
+
+  @media (max-width: 767px) {
+    padding-bottom: 80px;
+  }
+}
+
+.main__form {
+  padding: 247px 0 246px;
+
+  @media (max-width: 1023px) {
+    padding: 46px 0 125px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 46px 0 90px;
+  }
+}

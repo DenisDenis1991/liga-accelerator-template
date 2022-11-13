@@ -17,10 +17,25 @@
 
 // Blocks
 // ---------------------------------
-
+@import "blocks/accordeon";
 @import "blocks/btn";
 @import "blocks/modal";
-
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/about";
+@import "blocks/approve";
+@import "blocks/advantages";
+@import "blocks/contact-list";
+@import "blocks/contact";
+@import "blocks/footer";
+@import "blocks/form";
+@import "blocks/intro";
+@import "blocks/main";
+@import "blocks/products";
+@import "blocks/product-card";
+@import "blocks/page";
+@import "blocks/social";
+@import "blocks/user-nav";
 // ---------------------------------
 
 // ❗❗❗ запрещено использовать изображения в css, касается как jpg \ png, так и svg

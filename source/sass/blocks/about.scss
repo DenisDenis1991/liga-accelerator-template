@@ -1,0 +1,121 @@
+.about {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about::before {
+  content: "";
+  display: inline-block;
+  width: 150px;
+  height: 320px;
+  background-image: url("./../img/block/2022.webp");
+  background-repeat: no-repeat;
+  margin-right: 100px;
+
+  @media (max-width: 1023px) {
+    margin-right: 23px;
+    margin-top: 5px;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.about__heading {
+  @include style-reset();
+  font-weight: 400;
+  font-family: $ff-roboto;
+  font-size: 36px;
+  line-height: 51px;
+  margin-bottom: 10px;
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: 15px;
+  }
+}
+
+.about__description {
+  @include style-reset();
+  font-family: $ff-ptmono;
+  line-height: $line-height;
+  display: block;
+
+  &--mobile {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &--space {
+    padding-bottom: 21px;
+
+    @media (max-width: 767px) {
+      padding-bottom: 21px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.about__additional {
+  display: none;
+
+  @include style-reset();
+  font-family: $ff-ptmono;
+  line-height: $line-height;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.about__button {
+  font-family: $ff-roboto;
+  color: $color-deep-sky-blue;
+  border: 1px solid $color-deep-sky-blue;
+  border-radius: 3px;
+  background-color: transparent;
+  width: 180px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 12px;
+  margin-top: 41px;
+  cursor: pointer;
+
+  @include hover-focus {
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        opacity: 0.5;
+      }
+    }
+
+    &.focus-visible:focus {
+      opacity: 0.5;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    margin-top: 15px;
+  }
+
+  @media (max-width: 767px) {
+    width: 160px;
+    padding: 8px 12px;
+    margin-top: 13px;
+  }
+}

@@ -1,0 +1,118 @@
+.user-nav {
+  position: relative;
+
+  @media (max-width: 767px) {}
+
+  &::before {
+    @media (max-width: 767px) {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100vw;
+      min-width: 320px;
+      height: 1px;
+      background-color: rgba(248, 253, 255, 0.7);
+    }
+  }
+
+  &::after {
+    @media (max-width: 767px) {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100vw;
+      min-width: 320px;
+      bottom: -5px;
+      height: 1px;
+      background-color: rgba(248, 253, 255, 0.7);
+    }
+  }
+}
+
+.user-nav__heading {
+  @include style-reset();
+  font-family: $ff-roboto;
+  font-weight: 400;
+  color: $color-default-white;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 23px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+    padding: 20px 25px 20px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 15px;
+      height: 1px;
+      right: 25px;
+      top: 29px;
+      background-color: $color-alice-blue;
+    }
+  }
+}
+
+.js-close {
+  @media (max-width: 767px) {
+    // &::before {
+    //   position: absolute;
+    //   content: "";
+    //   display: block;
+    //   width: 15px;
+    //   height: 1px;
+    //   right: -4px;
+    //   top: 8px;
+    //   background-color: $color-alice-blue;
+    // }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 1px;
+      height: 15px;
+      right: 32px;
+      top: 22px;
+      background-color: $color-alice-blue;
+    }
+  }
+}
+
+.user-nav__list {
+  @include list-reset();
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 30px;
+
+  @media (max-width: 767px) {
+    padding: 0 25px;
+  }
+
+  & ul {
+    @include list-reset();
+    line-height: 22px;
+  }
+
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    max-height: 100%;
+    gap: 0;
+  }
+
+
+}
+
+.user-nav__item:not(:last-child) {
+  padding: 0 0 10px 0;
+}
+
+.user-nav__link {
+  line-height: 22px;
+  font-family: $ff-ptmono;
+  color: $color-white-transparent;
+}

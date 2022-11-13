@@ -1,0 +1,15 @@
+.accordeon__heading--plus {
+  position: relative;
+  @media (max-width: 767px) {
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 1px;
+      height: 15px;
+      right: 32px;
+      top: 22px;
+      background-color: $color-alice-blue;
+    }
+  }
+}

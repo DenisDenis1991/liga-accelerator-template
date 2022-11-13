@@ -24,3 +24,22 @@
     opacity: 0.8;
   }
 }
+
+.btn--callback {
+  font-family: $ff-roboto;
+  font-size: 14px;
+  line-height: 16px;
+  display: block;
+  padding: 10px;
+  width: 160px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid $color-alice-blue;
+  border-radius: 3px;
+  background-color: transparent;
+  margin-right: 60px;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+.header {
+  background: $black-to-down;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+
+  @media (max-width: 1023px) {
+    position: relative;
+  }
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1023px) {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 1023px) {
+    gap: 160px;
+  }
+
+  @media (max-width: 767px) {
+    gap: 0;
+    align-items: center;
+  }
+}
+
+.header__list {
+  @media (max-width: 1023px) {
+    margin-right: 20px;
+  }
+
+  @media (max-width: 767px) {
+    margin-right: 10px;
+  }
+}

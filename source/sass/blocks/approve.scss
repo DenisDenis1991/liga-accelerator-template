@@ -1,0 +1,48 @@
+.approv {
+  &:focus {
+    outline: 1px solid $color-default-black;
+  }
+  & label {
+    cursor: pointer;
+    display: grid;
+    gap: 11px;
+    grid-template-columns: 15px 1fr;
+    align-self: center;
+  }
+}
+
+.approv__label {
+  color: $color-white-transparent;
+  font-family: $ff-ptmono;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+// ----------------------- CHECKBOX------------------
+.approv__icon {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid $color-white-transparent;
+  border-radius: 2px;
+  align-self: center;
+}
+
+input[type="checkbox"]:checked + .approv__icon::before {
+
+  content: "";
+  position: absolute;
+  display: block;
+  width: 7px;
+  top: 4px;
+  right: 4px;
+  height: 6px;
+  background-image: url("./../img/svg/toggle.svg");
+}
+
+input[type="checkbox"]:focus + .approv__icon {
+  outline: 2px solid black;
+}

@@ -1,0 +1,19 @@
+.logo {
+  color: $color-alice-blue;
+  display: flex;
+  align-items: center;
+}
+
+.logo__text {
+  @include style-reset();
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+}
+
+.logo__description {
+  color: $color-white-transparent;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}

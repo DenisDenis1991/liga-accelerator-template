@@ -1,0 +1,23 @@
+.page__header {
+  padding: 28px 0 35px;
+
+  @media (max-width: 1023px) {
+    padding: 20px 0 25px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 10px 0 20px;
+  }
+}
+
+.page__footer {
+  padding: 55px 0;
+
+  @media (max-width: 1023px) {
+    padding: 49px 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 11px 0 40px;
+  }
+}
