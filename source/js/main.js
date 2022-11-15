@@ -25,8 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const contactOpen = document.querySelector('.contact__heading');
   const screenWidth = window.screen.width;
 
-  aboutButton.addEventListener('click', (evt) => {
-    evt.preventDefault();
+  aboutButton.addEventListener('click', (e) => {
+    e.preventDefault();
     if (aboutButton.textContent === 'Подробнее') {
       aboutButton.textContent = 'Свернуть';
       addText.style.display = 'block';
@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
       addText.style.display = 'none';
     }
   });
+
   const accordionItem = [contactOpen, listOpen];
 
   if (screenWidth <= 767) {
