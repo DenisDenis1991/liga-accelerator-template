@@ -4,126 +4,123 @@ import {initModals} from './modules/modals/init-modals';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-  // Utils
-  // ---------------------------------
-  // aboutButton.addEventListener('click', (evt)=> {
-  //   evt.target.textContent = 'Свернуть';
-
-  //   if (evt.target.textContent === 'Свернуть') {
-  //     evt.target.textContent = 'Подробнее';
-  //   }
-  // });
-
 
   iosVhFix();
 
   // Modules
   // ---------------------------
   const aboutButton = document.querySelector('.about__button');
+  const descriptionMobile = document.querySelector('.about__description--mobile');
   const addText = document.querySelector('.about__additional');
   const listOpen = document.querySelector('.user-nav__heading');
   const contactOpen = document.querySelector('.contact__heading');
-  const screenWidth = window.screen.width;
+  const navList = document.querySelector('.user-nav__list');
+  const contactList = document.querySelector('.contact__box');
 
-  aboutButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (aboutButton.textContent === 'Подробнее') {
-      aboutButton.textContent = 'Свернуть';
+  aboutButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    if (evt.target.textContent === 'Подробнее') {
+      evt.target.textContent = 'Свернуть';
       addText.style.display = 'block';
+      descriptionMobile.classList.remove('about__description--mobile');
       return;
     }
-    if (aboutButton.textContent === 'Свернуть') {
-      aboutButton.textContent = 'Подробнее';
+    if (evt.target.textContent === 'Свернуть') {
+      evt.target.textContent = 'Подробнее';
       addText.style.display = 'none';
+      descriptionMobile.classList.add('about__description--mobile');
     }
   });
 
-  const accordionItem = [contactOpen, listOpen];
+  const accordeonList = [navList, contactList];
+  const accordeonOpenList = [contactOpen, listOpen];
 
-  if (screenWidth <= 767) {
-    document.querySelector('.user-nav__list').classList.add('visually-hidden');
-    document.querySelector('.contact__box').classList.add('visually-hidden');
-    accordionItem.forEach(function (item) {
-      item.tabIndex = 0;
+  if (window.outerWidth <= 767) {
+    accordeonList.forEach((item) => {
+      item.classList.add('accordeon__close');
     });
   }
 
   let activeAccordion;
-  accordionItem.forEach(function (item) {
-    item.addEventListener('click', (evt) => {
-      if (screenWidth <= 767) {
+  accordeonOpenList.forEach(function (item) {
+    if (window.outerWidth <= 767) {
+      item.addEventListener('click', () => {
+
+        item.tabIndex = 0;
         if ((item.classList.contains('accordeon__heading--plus'))) {
-          evt.target.classList.remove('accordeon__heading--plus');
-          evt.target.nextElementSibling.classList.remove('visually-hidden');
+          item.classList.remove('accordeon__heading--plus');
+          item.nextElementSibling.classList.remove('accordeon__close');
 
           if (activeAccordion) {
             activeAccordion.classList.add('accordeon__heading--plus');
-            activeAccordion.nextElementSibling.classList.add('visually-hidden');
+            activeAccordion.nextElementSibling.classList.add('accordeon__close');
           }
 
           activeAccordion = activeAccordion === item ? 0 : item;
         }
       }
-    });
-
-    const input = document.getElementsByName('phone');
-
-    const prefixNumber = (str) => {
-      if (str === '7') {
-        return '7 (';
-      }
-      if (str === '8') {
-        return '8 (';
-      }
-      if (str === '9') {
-        return '7 (9';
-      }
-      return '7 (';
-    };
-
-    // ======================================
-    input.forEach((element) => element.addEventListener('input', () => {
-      const value = element.value.replace(/\D+/g, '');
-      const numberLength = 11;
-
-      let result;
-      if (element.value.includes('+8') || element.value[0] === '8') {
-        result = '';
-      } else {
-        result = '+';
-      }
-
-      //
-      for (let i = 0; i < value.length && i < numberLength; i++) {
-        switch (i) {
-          case 0:
-            result += prefixNumber(value[i]);
-            continue;
-          case 4:
-            result += ') ';
-            break;
-          case 7:
-            result += '-';
-            break;
-          case 9:
-            result += '-';
-            break;
-          default:
-            break;
-        }
-        result += value[i];
-      }
-      //
-      element.value = result;
-    })
-    );
-
-    // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
-    // в load следует добавить скрипты, не участвующие в работе первого экрана
-    window.addEventListener('load', () => {
-      initModals();
-    });
+      );
+    }
   });
+
+  const input = document.getElementsByName('phone');
+
+  const prefixNumber = (str) => {
+    if (str === '7') {
+      return '7 (';
+    }
+    if (str === '8') {
+      return '8 (';
+    }
+    if (str === '9') {
+      return '7 (9';
+    }
+    return '7 (';
+  };
+
+  // ======================================
+  input.forEach((element) => element.addEventListener('input', () => {
+    const value = element.value.replace(/\D+/g, '');
+    const numberLength = 11;
+
+    let result;
+    if (element.value.includes('+8') || element.value[0] === '8') {
+      result = '';
+    } else {
+      result = '+';
+    }
+
+    //
+    for (let i = 0; i < value.length && i < numberLength; i++) {
+      switch (i) {
+        case 0:
+          result += prefixNumber(value[i]);
+          continue;
+        case 4:
+          result += ') ';
+          break;
+        case 7:
+          result += '-';
+          break;
+        case 9:
+          result += '-';
+          break;
+        default:
+          break;
+      }
+      result += value[i];
+    }
+    //
+    element.value = result;
+  })
+  );
+
+  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
+  // в load следует добавить скрипты, не участвующие в работе первого экрана
+  window.addEventListener('load', () => {
+    initModals();
+  });
+
 
   // ---------------------------------
 

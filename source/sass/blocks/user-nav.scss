@@ -1,8 +1,6 @@
 .user-nav {
   position: relative;
 
-  @media (max-width: 767px) {}
-
   &::before {
     @media (max-width: 767px) {
       content: "";
@@ -103,8 +101,6 @@
     max-height: 100%;
     gap: 0;
   }
-
-
 }
 
 .user-nav__item:not(:last-child) {

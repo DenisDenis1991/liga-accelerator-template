@@ -2286,6 +2286,10 @@ input[type=checkbox]:focus + .approv__icon {
     background-color: #f8fdff;
   }
 
+  .accordeon__close {
+    display: none;
+  }
+
   .modal__wrapper {
     padding: 60px 16px;
   }

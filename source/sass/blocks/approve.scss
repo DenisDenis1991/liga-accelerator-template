@@ -2,6 +2,7 @@
   &:focus {
     outline: 1px solid $color-default-black;
   }
+
   & label {
     cursor: pointer;
     display: grid;
@@ -44,5 +45,5 @@ input[type="checkbox"]:checked + .approv__icon::before {
 }
 
 input[type="checkbox"]:focus + .approv__icon {
-  outline: 2px solid black;
+  outline: 2px solid $color-default-black;
 }
