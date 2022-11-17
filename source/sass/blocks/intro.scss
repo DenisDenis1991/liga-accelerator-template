@@ -45,6 +45,8 @@
     }
 
     @media (max-width: 767px) {
+      top: -81px;
+      height: calc(100% + 81px);
       background-image: url("./../img/block/board-mobile.webp");
 
       @media (min-resolution: 2dppx) {

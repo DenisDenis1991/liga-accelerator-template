@@ -38,9 +38,4 @@
   border: 1px solid $color-alice-blue;
   border-radius: 3px;
   background-color: transparent;
-  margin-right: 60px;
-
-  @media (max-width: 1023px) {
-    display: none;
-  }
 }

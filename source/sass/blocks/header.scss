@@ -12,7 +12,7 @@
 .header__top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   @media (max-width: 1023px) {
     justify-content: space-between;
@@ -25,12 +25,21 @@
 
   @media (max-width: 767px) {
     gap: 0;
-    align-items: center;
   }
 }
 
 .header__logo {
   @media (max-width: 767px) {
     padding-top: 6px;
+  }
+}
+
+.header__button {
+  margin-right: 60px;
+  max-width: 500px;
+  margin-top: 5px;
+
+  @media (max-width: 1023px) {
+    display: none;
   }
 }

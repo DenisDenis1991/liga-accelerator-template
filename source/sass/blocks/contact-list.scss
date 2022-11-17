@@ -2,19 +2,30 @@
   @include list-reset();
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  max-width: 855px;
+  max-width: 480px;
   width: 100%;
+  padding-top: 10px;
 
   @media (max-width: 1023px) {
     display: grid;
-    grid-template-columns: 1fr 60px 60px;
-    align-items: flex-start;
+    grid-template-columns: 60px 60px;
+    width: auto;
+    max-width: none;
+    padding-top: 0;
   }
 
   @media (max-width: 767px) {
-    grid-template-columns: 1fr 60px 50px;
+    grid-template-columns: 60px 50px;
+  }
+}
+
+.contact-list__item {
+  min-width: 200px;
+
+  @media (max-width: 1023px) {
+    min-width: auto;
   }
 }
 
@@ -39,7 +50,7 @@
   }
 
   &--mail {
-    margin-left: 40px;
+    margin-left: 8px;
 
     @media (max-width: 1023px) {
       margin: 0 20px 0 0;
@@ -47,7 +58,7 @@
   }
 
   &--tel {
-    margin-right: 20px;
+    margin-right: 14px;
   }
 
   &--mail::before {

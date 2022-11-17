@@ -39,14 +39,15 @@ window.addEventListener('DOMContentLoaded', () => {
     accordeonList.forEach((item) => {
       item.classList.add('accordeon__close');
     });
+    accordeonOpenList.forEach((element) => {
+      element.tabIndex = 0;
+    });
   }
 
   let activeAccordion;
   accordeonOpenList.forEach(function (item) {
     if (window.outerWidth <= 767) {
       item.addEventListener('click', () => {
-
-        item.tabIndex = 0;
         if ((item.classList.contains('accordeon__heading--plus'))) {
           item.classList.remove('accordeon__heading--plus');
           item.nextElementSibling.classList.remove('accordeon__close');
